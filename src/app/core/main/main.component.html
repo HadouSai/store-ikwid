@@ -1,0 +1,16 @@
+<div class="h-full">
+  <div class="flex">
+    <ul class="flex flex-col">
+      <li class="p-2" *ngFor="let tab of tabsList; ngForTrackBy">
+        <span class="px-1">{{tab.name}}</span>
+        <span (click)="closeTab(tab)">close</span>
+      </li>
+    </ul>
+  </div>
+
+
+  <div class="pt-6">
+    <input #inputTab type="text">
+    <button (click)="addTab(inputTab.value)">add</button>
+  </div>
+</div>
