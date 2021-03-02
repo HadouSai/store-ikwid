@@ -6,7 +6,10 @@ const routes: Routes = [
   {
     path: '',
     component: MainComponent,
-  },
+  },{
+    path: 'auth',
+    loadChildren: () => import('../../pages/auth/auth/auth.module').then(m => m.AuthModule)
+  }
 ];
 
 @NgModule({

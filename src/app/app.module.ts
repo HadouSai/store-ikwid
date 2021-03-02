@@ -10,12 +10,15 @@ import { StoreModule } from '@ngrx/store';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    CommonModule,
+    HttpClientModule,
     AppRoutingModule,
     StoreModule.forRoot(reducers),
     BrowserAnimationsModule,

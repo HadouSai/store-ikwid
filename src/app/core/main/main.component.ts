@@ -1,9 +1,11 @@
 import { State } from './../../ngrx/reducers/index.reducers';
+import { _TabStateKey } from './../../ngrx/reducers/tabs/tabs.interface';
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { list, tabs } from '../../mock';
 import { Subscription } from 'rxjs';
 import { addTab } from 'src/app/ngrx/reducers/tabs/tabs.actions';
+import { Router } from '@angular/router';
 
 @Component({
   templateUrl: './main.component.html',
@@ -14,8 +16,8 @@ export class MainComponent implements OnInit {
 
   private sub1: Subscription;
 
-  constructor(private store: Store<State>) {
-    this.sub1 = this.store.select('tabState').subscribe((c) => console.log(c));
+  constructor(private store: Store<State>, private router: Router) {
+    this.sub1 = this.store.select(_TabStateKey).subscribe((c) => console.log(c));
   }
 
   ngOnInit(): void {}
@@ -34,5 +36,9 @@ export class MainComponent implements OnInit {
     };
 
     this.store.dispatch(addTab({ tabState: tab }));
+  }
+
+  navigateToAuth() {
+    this.router.navigate(['/auth']);
   }
 }

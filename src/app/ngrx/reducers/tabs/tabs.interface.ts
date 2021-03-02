@@ -3,3 +3,5 @@ export interface TabState {
   code: number;
   path: string;
 }
+
+export const _TabStateKey = 'tabState';
