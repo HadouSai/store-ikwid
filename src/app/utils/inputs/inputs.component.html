@@ -1,0 +1,12 @@
+<div class="custom-input w-100" [ngStyle]="{'height': setHeight()}">
+
+  <input [value]="currentValue" autocomplete [(ngModel)]="currentValue" (input)="onInput($event.target)"
+    [type]="type" [placeholder]="placeholder" [name]="'f-' + type" [disabled]="isDisabled"
+    [ngClass]="{'error-msg': showValidations && errorMsg}" [ngStyle]="{'height': isString(height) ? height : '44px'}">
+
+  <ng-template [ngIf]="showValidations && errorMsg">
+    <div class="w-100 pt-1">
+      <span> {{ errorMsg }} </span>
+    </div>
+  </ng-template>
+</div>

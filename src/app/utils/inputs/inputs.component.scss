@@ -1,0 +1,41 @@
+:host {
+  display: flex;
+  width: 100%;
+}
+
+.custom-input {
+  width: 100%;
+
+  input:focus {
+    outline: none;
+  }
+
+  input {
+    width: inherit;
+    border: 3px solid #000;
+    border-radius: .3rem;
+    font-size: var(--spec-input-text);
+    color: var(--spec-text-primary);
+    padding: 0 8px;
+
+    &::placeholder {
+      color: var(--spec-text-disabled);
+    }
+  }
+
+  .error-msg {
+    border-color: var(--spec-alert2-color);
+  }
+
+  div span {
+    font-size: var(--spec-size-text-tertiary);
+  }
+
+  .error-msg~div span {
+    color: var(--spec-alert2-color);
+  }
+}
+
+.pt-1 {
+  padding-top: 2px;
+}
