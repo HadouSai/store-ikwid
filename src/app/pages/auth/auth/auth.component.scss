@@ -1,0 +1,25 @@
+.container-main-view {
+  max-height: 1536px;
+
+  //border: 5px solid black;
+  >.grid {
+    max-height: inherit;
+
+    @media (min-width: 1024px) {
+      grid-template-columns: 576px 1fr;
+    }
+  }
+}
+
+.left-login {
+  width: inherit;
+}
+
+.right-login {
+  height: inherit;
+}
+
+.left-login,
+.right-login {
+  max-height: inherit;
+}

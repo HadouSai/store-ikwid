@@ -1,16 +1,117 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
 
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+:root {
+  /* backgrounds */
+  --spec-wrapper-primary: #fff; //totalmente blanco
+  --spec-wrapper-secondary: #f9f9f9; // utilizado en el header como youtube, tiene un poco de gris
+  --spec-wrapper-tertiary: #e9eaec; //utilizado como en footers tiene mucho gris
+  --spec-wrapper-login: #f9f9f9;
+  /* Darktheme inversos de los anteriores */
+  --spec-warpper-primary-inverse: #202020;
+  --spec-wrapper-secondary-inverse: #181818;
+  --spec-wrapper-tertiary-inverse: #1c1e21;
+  --spec-wrapper-login-inverse: rgba(0, 0, 0, .75);
+
+
+  /* textos */
+  --spec-text-primary: #030303; //textos comunes
+  --spec-size-text-primary: .875rem;
+  --spec-text-secondary: #606060; //se plican para titulos o textos de 2 grado como titulo en el sidebar
+  --spec-size-text-secondary: .875rem; //puede variar pero como titulo utilizar este
+  --spec-size-text-tertiary: .8125rem; // como texto secundario
+  --spec-text-disabled: #909090; //casos cuando no es inaccesible
+  --spec-text-static-gray: #a9abb3; // placeholders
+  --spec-text-footer: #e9eaec; //texto que se utiliza en el footer
+  --spec-input-text: 1rem;
+
+  /* textos darktheme */
+  --spec-text-primary-inverse: #fff;
+  --spec-text-secondary-inverse: #aaa;
+
+  /* iconos */
+  --spec-icon-primary: #606060; //iconos en el nav, son importantes
+  --spec-icon-normal: #909090; //utilizado en likes iconos no muy grandes ni muy importantes
+  --spec-icon-hover-normal: #606060;
+  --spec-size-icon-primary: 2.5rem;
+  --spec-size-icon-common: 1.25rem;
+  --spec-size-icon-short: 1rem;
+  --spec-icon-inactive: #9c9b9b;
+  --spec-icon-disabled: #ccc;
+
+  /* general */
+  --spec-main-color: #07ADA8;
+  --spec-alert-color: #c00;
+  --spec-alert2-color: #e95022;
+  --spec-10-percent-layer: rgba(0, 0, 0, 0.10);
+
+  /* inputs */
+  --spec-input-text-color: hsla(0, 0%, 0%, 0.87);
+  --spec-input-background: rgba(0, 0, 0, .04);
+
+  /* scroll */
+  --spec-scroll: rgba(152, 148, 148, 0.72);
+
+  /* tags and lines */
+  --spec-tag-background: #434343;
+  --spec-line-color: #BBBBBB; //linea para bordes en general
+
+  /* box shadows */
+  --spec-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24), 0 0 2px rgba(0, 0, 0, 0.12); //sombra general
+  --spec-box-shadow-card: 0px 2px 15px 3px #00000020; //sombra para cards
+
+  /* borders */
+  --spec-border-radius-5: .3125rem;
+
+  /* buttons */
+
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
 *,
-*::after,
-*::before {
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
+.custom-scroll {
+  &::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+  }
 
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--spec-scroll);
+    border-radius: 4px;
+  }
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a,
+a:visited,
+a:link,
+a:active,
+a:focus {
+  text-decoration: none;
+  color: initial;
+  outline: 0;
+}

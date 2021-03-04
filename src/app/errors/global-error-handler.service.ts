@@ -10,13 +10,12 @@ export class GlobalErrorHandler implements ErrorHandler {
 
   // Error handling is important and needs to be loaded first.
   // Because of this we should manually inject the services with Injector.
-  constructor(private injector: Injector) { }
+  constructor(private injector: Injector, private notifierServ: NotificationErrorsService) { }
 
   handleError(error: Error | HttpErrorResponse) {
 
     const errorService = this.injector.get(CommonErrorsService);
     const logger = this.injector.get(LogerErrorService);
-    const notifier = this.injector.get(NotificationErrorsService);
 
     let message: any;
     let stackTrace: any;
@@ -25,12 +24,12 @@ export class GlobalErrorHandler implements ErrorHandler {
       // Server Error
       message = errorService.getServerMessage(error);
       stackTrace = errorService.getServerStack(error);
-      notifier.showError(message);
+      this.notifierServ.showError(message);
     } else {
       // Client Error
       message = errorService.getClientMessage(error);
       stackTrace = errorService.getClientStack(error);
-      notifier.showError(message);
+      this.notifierServ.showError(message);
     }
 
     // Always log errors

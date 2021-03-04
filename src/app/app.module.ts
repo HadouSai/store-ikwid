@@ -1,3 +1,4 @@
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { GlobalErrorHandler } from './errors/global-error-handler.service';
 import { ServerErrorInterceptor } from './errors/server-error.service';
 import { reducers } from './ngrx/reducers/index.reducers';
@@ -20,6 +21,7 @@ import { CommonModule } from '@angular/common';
     CommonModule,
     HttpClientModule,
     AppRoutingModule,
+    MatSnackBarModule,
     StoreModule.forRoot(reducers),
     BrowserAnimationsModule,
     StoreDevtoolsModule.instrument({

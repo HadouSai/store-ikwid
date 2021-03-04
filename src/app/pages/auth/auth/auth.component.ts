@@ -57,24 +57,12 @@ export class AuthComponent implements OnInit {
     return this.form.get(this.username);
   }
 
-  get usernameFieldValid() {
-    return this.usernameField?.valid;
-  }
-
   get passwordField() {
     return this.form.get(this.password);
   }
 
-  get passwordFieldValid() {
-    return this.passwordField?.valid;
-  }
-
-  home() {
-    this.router.navigateByUrl('./');
-  }
-
   submitForm(event: Event) {
-    event.preventDefault;
+    event.preventDefault();
     //console.log(this.form);
 
     this.resolveValidations.basicValidation(this.errorMsg, this.form);
@@ -85,6 +73,15 @@ export class AuthComponent implements OnInit {
     }
 
     // aca simulo que pedi al servicio algo
+    console.log(this.usernameField);
+    this.validateLogin();
+  }
+
+  private validateLogin() {
+    this.recreateAsync();
+
+    //logica si es valido por aca si no crear otro metodo para mostrar error login
+
     const userAuth: AuthState = {
       email: this.usernameField?.value,
       username: 'loquesea',
@@ -94,10 +91,12 @@ export class AuthComponent implements OnInit {
       uid: '3',
     };
 
-    this.recreateAsync();
+    this.saveUser(userAuth);
+  }
 
-    console.log(this.usernameField);
+  private saveUser(userAuth: AuthState) {
     this.store.dispatch(loged({ userAuth }));
+    // guardar sesion en token en localstorage
   }
 
   recreateAsync = async () =>
