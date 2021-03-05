@@ -12,8 +12,8 @@
 
   input {
     width: inherit;
-    border: 3px solid #000;
-    border-radius: .3rem;
+    border: 1px solid var(--spec-line-color);
+    border-radius: var(--spec-border-radius);
     font-size: var(--spec-input-text);
     color: var(--spec-text-primary);
     padding: 0 8px;

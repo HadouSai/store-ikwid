@@ -22,6 +22,7 @@
   /* textos */
   --spec-text-primary: #030303; //textos comunes
   --spec-size-text-primary: .875rem;
+  --spec-size-text-tertiary-other: 1rem;
   --spec-text-secondary: #606060; //se plican para titulos o textos de 2 grado como titulo en el sidebar
   --spec-size-text-secondary: .875rem; //puede variar pero como titulo utilizar este
   --spec-size-text-tertiary: .8125rem; // como texto secundario
@@ -29,6 +30,7 @@
   --spec-text-static-gray: #a9abb3; // placeholders
   --spec-text-footer: #e9eaec; //texto que se utiliza en el footer
   --spec-input-text: 1rem;
+  --spec-text-color-title-l: #fff;
 
   /* textos darktheme */
   --spec-text-primary-inverse: #fff;
@@ -67,9 +69,12 @@
 
   /* borders */
   --spec-border-radius-5: .3125rem;
+  --spec-border-radius: .4rem;
 
   /* buttons */
 
+  /* icons brands */
+  --spec-brand-icon-color: #BBBBBB;
 }
 
 html,
@@ -114,4 +119,8 @@ a:focus {
   text-decoration: none;
   color: initial;
   outline: 0;
+}
+
+.normal-btn {
+  @apply py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-400
 }

@@ -9,6 +9,7 @@ import { State } from 'src/app/ngrx/reducers/index.reducers';
 import { TypeInputs } from 'src/app/utils/inputs/inputs.interface';
 import { OwnValidations } from 'src/app/utils/own-validations/own-validations';
 import { ResolveValidations } from 'src/app/utils/own-validations/resolve-validations';
+import { btnsMedia } from 'src/app/utils/icons/icons-brands/icons-brands';
 
 @Component({
   selector: 'app-auth',
@@ -23,10 +24,14 @@ export class AuthComponent implements OnInit {
   readonly placeholderSignIn = 'Email';
   readonly placeholderPassword = 'Password';
 
+  authMode = true;
+
   readonly titleLogin = 'Sign Up';
   readonly alreadyAccountText = 'Already have an account?';
   readonly createOrLoginText = `Log in`;
   readonly btnTextLogin = 'Create Account';
+
+  readonly btnsMedia = btnsMedia;
 
   resolveValidations = new ResolveValidations();
 
